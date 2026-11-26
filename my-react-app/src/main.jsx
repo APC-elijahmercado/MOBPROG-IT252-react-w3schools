@@ -21,10 +21,9 @@ function Car(props) {
 
 // React Destructuring Props
 
-function Car(props) {
-  const {brand, model} = props;
+function Car({color, brand, ...rest}) {
   return (
-    <h2>I love my {brand} {model}!</h2>
+    <h2>My {brand} {rest.model} is {color}!</h2>
   );
 }
 
