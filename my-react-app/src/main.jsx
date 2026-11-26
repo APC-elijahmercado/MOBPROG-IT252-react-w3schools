@@ -1,23 +1,33 @@
 import { createRoot } from 'react-dom/client'
 
-const users = [
-  { id: 1, name: 'John', age: 30 },
-  { id: 2, name: 'Jane', age: 25 },
-  { id: 3, name: 'Bob', age: 35 }
-];
+// React Class Components
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a carrrr!</h2>;
+  }
+}
 
-function UserList() {
+
+// React Props
+createRoot(document.getElementById('root')).render(
+  <Car brand="Ford" model="Mustang" color="red" />
+);
+
+function Car(props) {
   return (
-    <ul>
-      {users.map(user => 
-        <li key={user.id}>
-          {user.name} is {user.age} years old
-        </li>
-      )}
-    </ul>
+    <h2>I am a {props.color} {props.brand} {props.model}!</h2>
+  );
+}
+
+// React Destructuring Props
+
+function Car(props) {
+  const {brand, model} = props;
+  return (
+    <h2>I love my {brand} {model}!</h2>
   );
 }
 
 createRoot(document.getElementById('root')).render(
-  <UserList />
-)
+  <Car brand="Ford" model="Mustang" color="red" year={1969} />
+);
