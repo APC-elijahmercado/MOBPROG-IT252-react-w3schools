@@ -21,12 +21,12 @@ function Car(props) {
 
 // React Destructuring Props
 
-function Car({color, brand, ...rest}) {
+function garage({color, brand, ...rest}) {
   return (
     <h2>My {brand} {rest.model} is {color}!</h2>
   );
 }
 
 createRoot(document.getElementById('root')).render(
-  <Car brand="Ford" model="Mustang" color="red" year={1969} />
+  <garage brand="Ford" model="Mustang" color="red" year={1969} />
 );
